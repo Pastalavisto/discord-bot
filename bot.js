@@ -177,5 +177,5 @@ function lirephrase(){
 	console.log(phrase)
 }
 lancement();
-setInterval(lireFichier,40000,"devoir.txt")
-setInterval(lancement,40000);
+setInterval(lireFichier,39000,"devoir.txt")
+setInterval(lancement,39000);

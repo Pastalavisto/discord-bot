@@ -3,10 +3,10 @@ const csv = require('csv')
 const url = 'https://cas3.e-lyco.fr/discovery/WAYF?entityID=https%3A%2F%2Fcas3.e-lyco.fr%2Fshibboleth&return=https%3A%2F%2Fcas3.e-lyco.fr%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253A01e0e25d2a9baa83f78735371b1fd2d1169dd90058ee09cb60c5191f9bdb015f';
 async function lancement() {
 	const browser = await puppeteer.launch({
-		args: [
-			'--no-sandbox',
-			'--disable-setuid-sandbox'
-		],
+	  'args' : [
+	    '--no-sandbox',
+	    '--disable-setuid-sandbox'
+	  ]
 	});
 	const page = await browser.newPage();
 	await page.goto(url);

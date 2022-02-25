@@ -6,6 +6,7 @@ let ancien = [];
 let date = new Date();
 let jour = date.getDay();
 async function lancement() {
+	console.log("lancement du bot");
 	const browser = await puppeteer.launch({
 		'args' : [
 		  '--no-sandbox',
@@ -14,20 +15,16 @@ async function lancement() {
 	  });
 	const page = await browser.newPage();
 	await page.goto(url);
-	console.log("1");
 	await page.click('#ep4')
 	await page.click('#valider')
-	console.log("2");
 	await page.waitForNetworkIdle();
 	await page.click('#bouton_eleve')
 	await page.type('#username',process.env.USER);
 	await page.type('#password',process.env.PASSWORD);
-	console.log("3");
 	await page.click('#bouton_valider');
 	await page.waitForTimeout(5000);
 	await page.goto("https://0530012a.index-education.net/pronote/");
 	await page.waitForTimeout(15000);
-	console.log("4");
 	await page.click('i[onClick ="GInterface.Instances[2]._surToutVoir(7)"] ')
 	await page.waitForTimeout(2000);
 
@@ -151,8 +148,10 @@ function lireFichier(){
 
 function aFichier(a){
 	ancien = a;
+	console.log("ancien ok");
 }
 async function depart(){
+	console.log("depart");
 	await lireFichier();
 }
 function convertionPhrase(tab){
@@ -179,18 +178,15 @@ const client = new Discord.Client({
 
 
 client.on("ready", () => {
-    console.log("Zéé parti")
+    console.log("Zéé parti");
 });
 client.login(process.env.TOKEN);
 
 function envoyerLecon(msg){
-	console.log("envoi de leçons")
-	client.channels.cache.get("823291198021828721").send(msg)
+	console.log("envoi de leçons");
+	client.channels.cache.get("823291198021828721").send(msg);
 }
 
-function lirephrase(){
-	console.log(phrase)
-}
 depart();
 lancement();
 setInterval(function (){

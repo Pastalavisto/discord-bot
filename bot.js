@@ -147,6 +147,7 @@ setInterval(function (){
 		console.log("nouveau jour")
 		jour = b;
 		lancement(true);
+	}else{
+		lancement(false);
 	}
-	lancement(false);	
 },100000);

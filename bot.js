@@ -136,7 +136,7 @@ client.login(process.env.TOKEN);
 
 function envoyerLecon(msg){
 	console.log("envoi de leçons");
-	client.channels.cache.get("823291198021828721").send(msg);
+	client.channels.cache.get("949003288290926622").send(msg);
 }
 
 lancement(true);
